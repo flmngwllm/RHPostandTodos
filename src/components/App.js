@@ -1,10 +1,18 @@
 import React,{Component} from 'react'
 
 class App extends Component{
+state = {
+    resource: 'posts'
+}
+
     render(){
         return (
            <div>
-               App
+               <div>
+                   <button onClick={() => this.setState({resource: 'posts'})}>Post</button>
+                   <button onClick={() => this.setState({resource: 'todos'})}>ToDos</button>
+               </div>
+               {this.state.resource}
            </div> 
         )
     }
